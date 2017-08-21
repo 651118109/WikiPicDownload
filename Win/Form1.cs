@@ -24,7 +24,11 @@ namespace Win
             FolderBrowserDialog folder = new FolderBrowserDialog();
             if (folder.ShowDialog() == DialogResult.OK)
             {
-                this.txtSavePath.Text = folder.SelectedPath; ;
+                this.txtSavePath.Text = folder.SelectedPath; 
+            }
+            if ( this.txtSavePath.Text!="E:/WikiPic/")
+            {
+                this.txtSavePath.Text += @"\";
             }
         }
 
