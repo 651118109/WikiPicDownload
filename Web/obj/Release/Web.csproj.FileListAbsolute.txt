@@ -1,5 +1,4 @@
 D:\test\WikiPicDownload\Web\bin\web.dll
 D:\test\WikiPicDownload\Web\bin\web.pdb
-D:\test\WikiPicDownload\Web\obj\Release\Web.csprojResolveAssemblyReference.cache
 D:\test\WikiPicDownload\Web\obj\Release\web.dll
 D:\test\WikiPicDownload\Web\obj\Release\web.pdb
