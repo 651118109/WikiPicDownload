@@ -79,8 +79,8 @@ namespace web.actions
                     string tmpFileName = fileName;
                     string tmpRequestUrl = requestUrl;
                     string tmpSavePath = savePath;
-                    tmpFileName += p + ".jpg";//002A.jpg
-                    tmpRequestUrl += tmpFileName;//http://file.fgowiki.fgowiki.com/fgo/card/servant/002D.jpg
+                    tmpFileName += p + ".png";//002A.png
+                    tmpRequestUrl += tmpFileName;//http://file.fgowiki.fgowiki.com/fgo/card/servant/002D.png
                     tmpSavePath += tmpFileName;
 
                     //WebRequest request = WebRequest.Create(tmpRequestUrl);
