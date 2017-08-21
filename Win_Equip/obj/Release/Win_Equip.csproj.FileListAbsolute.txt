@@ -1,0 +1,7 @@
+D:\test\WikiPicDownload\Win_Equip\obj\Release\Win_Equip.Form1.resources
+D:\test\WikiPicDownload\Win_Equip\obj\Release\Win_Equip.Properties.Resources.resources
+D:\test\WikiPicDownload\Win_Equip\obj\Release\Win_Equip.csproj.GenerateResource.Cache
+D:\test\WikiPicDownload\Win_Equip\bin\Release\Win_Equip.exe
+D:\test\WikiPicDownload\Win_Equip\bin\Release\Win_Equip.pdb
+D:\test\WikiPicDownload\Win_Equip\obj\Release\Win_Equip.exe
+D:\test\WikiPicDownload\Win_Equip\obj\Release\Win_Equip.pdb

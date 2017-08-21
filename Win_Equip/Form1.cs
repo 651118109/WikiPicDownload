@@ -1,0 +1,109 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Win_Equip
+{
+    using System.IO;
+    using System.Net;
+
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void txtSavePath_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folder = new FolderBrowserDialog();
+            if (folder.ShowDialog() == DialogResult.OK)
+            {
+                this.txtSavePath.Text = folder.SelectedPath;
+            }
+            if (this.txtSavePath.Text != "E:/WikiPic/")
+            {
+                this.txtSavePath.Text += @"\";
+            }
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            string savePath = txtSavePath.Text.Trim();
+            string requestUrl = "http://file.fgowiki.fgowiki.com/fgo/card/equip/";
+            int min = Convert.ToInt32(txtMin.Text.Trim());
+            int max = Convert.ToInt32(txtMax.Text.Trim());
+
+            if (string.IsNullOrEmpty(savePath))
+            {
+                MessageBox.Show("请选择保存路径");
+                return;
+            }
+
+            //匿名委托
+            System.Threading.Thread th = new System.Threading.Thread(() =>
+            {
+                ProcessDownload(savePath, requestUrl, min, max);
+            });
+            th.IsBackground = true;
+            th.Start();
+
+        }
+
+        #region 执行下载操作 - void ProcessDownload(string savePath, string requestUrl, int min, int max)
+        /// <summary>
+        /// 执行下载操作
+        /// </summary>
+        /// <param name="savePath">图片保存的路径</param>
+        /// <param name="requestUrl">请求图片的url地址</param>
+        /// <param name="min">礼装编号最小值</param>
+        /// <param name="max">礼装编号最大值</param>
+        private void ProcessDownload(string savePath, string requestUrl, int min, int max)
+        {
+            for (int i = min; i <= max; i++)
+            {
+                string fileName = i.ToString("000");
+
+                    string tmpFileName = fileName;
+                    string tmpRequestUrl = requestUrl;
+                    string tmpSavePath = savePath;
+                    tmpFileName += "A.png";//002A.png
+                    tmpRequestUrl += tmpFileName;
+                    tmpSavePath += tmpFileName;
+
+                    WebRequest request = WebRequest.Create(tmpRequestUrl);
+
+                    if (!Directory.Exists(savePath))//不存在则创建
+                    {
+                        Directory.CreateDirectory(savePath);
+                    }
+                    try
+                    {
+                        using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                        {
+
+                            if (response.StatusCode == HttpStatusCode.OK)
+                            {
+                                using (Stream stream = response.GetResponseStream()
+                           , fsStream = new FileStream(tmpSavePath, FileMode.Create))
+                                {
+                                    stream.CopyTo(fsStream);//数据流.CopyTo(目标流)
+                                }
+                            }
+                        }
+                    }
+                    catch (WebException ex)
+                    {
+                        continue;
+                    }
+            }
+            MessageBox.Show("下载完成!");
+        }
+        #endregion
+    }
+}
