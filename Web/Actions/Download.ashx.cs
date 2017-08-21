@@ -59,25 +59,6 @@ namespace web.actions
         }
         #endregion
 
-        #region 获得文件名 - string GetFileName(int num)
-        /// <summary>
-        /// 获得文件名
-        /// </summary>
-        /// <param name="num">从者编号</param>
-        private string GetFileName(int num)
-        {
-            int len = num.ToString().Length;
-            switch (len)
-            {
-                case 1:
-                    return "00" + num;
-                case 2:
-                    return "0" + num;
-                default:
-                    return num.ToString();
-            }
-        }
-        #endregion
 
         #region 执行下载操作 - void ProcessDownload(string savePath, string requestUrl, int min, int max)
         /// <summary>
@@ -91,7 +72,7 @@ namespace web.actions
         {
             for (int i = min; i <= max; i++)
             {
-                string fileName = GetFileName(i);//002
+                string fileName =i.ToString("000");//002
                 string[] picArr = new string[] { "A", "B", "C", "D", "E" };
                 foreach (var p in picArr)
                 {
