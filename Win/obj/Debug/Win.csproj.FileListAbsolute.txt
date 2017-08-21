@@ -1,0 +1,8 @@
+D:\test\WikiPicDownload\Win\bin\Debug\Win.exe
+D:\test\WikiPicDownload\Win\bin\Debug\Win.pdb
+D:\test\WikiPicDownload\Win\obj\Debug\Win.csprojResolveAssemblyReference.cache
+D:\test\WikiPicDownload\Win\obj\Debug\Win.Form1.resources
+D:\test\WikiPicDownload\Win\obj\Debug\Win.Properties.Resources.resources
+D:\test\WikiPicDownload\Win\obj\Debug\Win.csproj.GenerateResource.Cache
+D:\test\WikiPicDownload\Win\obj\Debug\Win.exe
+D:\test\WikiPicDownload\Win\obj\Debug\Win.pdb

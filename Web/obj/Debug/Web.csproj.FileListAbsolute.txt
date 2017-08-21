@@ -1,0 +1,5 @@
+D:\test\WikiPicDownload\web\bin\web.dll
+D:\test\WikiPicDownload\web\bin\web.pdb
+D:\test\WikiPicDownload\web\obj\Debug\web.dll
+D:\test\WikiPicDownload\web\obj\Debug\web.pdb
+D:\test\WikiPicDownload\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
